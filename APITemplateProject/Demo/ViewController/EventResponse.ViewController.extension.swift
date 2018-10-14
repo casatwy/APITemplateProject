@@ -1,8 +1,8 @@
 //
 //  EventResponse.ViewController.extension.swift
-//  MarvelAPI
+//  APITemplateProject
 //
-//  Created by casa on 2018/9/27.
+//  Created by casa's script
 //  Copyright © 2018 casa. All rights reserved.
 //
 

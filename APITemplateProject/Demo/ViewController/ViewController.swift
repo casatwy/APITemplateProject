@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  MarvelAPI
+//  APITemplateProject
 //
-//  Created by casa on 2018/9/27.
+//  Created by casa's script
 //  Copyright © 2018 casa. All rights reserved.
 //
 
@@ -26,11 +26,12 @@ class ViewController: UIViewController {
     }()
     
     lazy var dataSource = [
-        [
+        // [
             // DataSourceKey.title:"CharacterAPI",
             // DataSourceKey.clazz:CharactorViewController.self
-            // __DemoAPIViewController__
-        ]
+        // ],
+
+        //__DemoAPIViewController__
     ]
 
     struct DataSourceKey {

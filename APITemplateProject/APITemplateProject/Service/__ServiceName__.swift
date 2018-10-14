@@ -1,8 +1,8 @@
 //
 //  CTMarvelService.swift
-//  MarvelAPI
+//  APITemplateProject
 //
-//  Created by casa on 2018/9/27.
+//  Created by casa's script
 //  Copyright © 2018 casa. All rights reserved.
 //
 
@@ -13,7 +13,6 @@ import CryptoSwift
 
 class __ServiceName__ {
     static let sharedInstance = __ServiceName__()
-    let baseUrl = "__BaseURL__"
     lazy var _apiEnvironment: CTNetworkingAPIEnvironment = .Release
     lazy var _sessionManager: SessionManager = SessionManager.default
 }
