@@ -1,5 +1,5 @@
 //
-//  CTMarvelService.swift
+//  __ServiceName__.swift
 //  APITemplateProject
 //
 //  Created by casa's script
@@ -16,7 +16,7 @@ class __ServiceName__ {
     lazy var _sessionManager: SessionManager = SessionManager.default
 }
 
-extension CTMarvelService : CTNetworkingService {
+extension __ServiceName__ : CTNetworkingService {
     var apiEnvironment: CTNetworkingAPIEnvironment {
         get {
             return _apiEnvironment
