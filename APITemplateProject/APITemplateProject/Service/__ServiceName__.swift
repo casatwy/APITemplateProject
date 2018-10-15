@@ -11,12 +11,22 @@ import Alamofire
 import CTNetworkingSwift
 
 class __ServiceName__ {
-    static let sharedInstance = __ServiceName__()
+    static let _sharedInstance = __ServiceName__()
     lazy var _apiEnvironment: CTNetworkingAPIEnvironment = .Release
     lazy var _sessionManager: SessionManager = SessionManager.default
 }
 
 extension __ServiceName__ : CTNetworkingService {
+
+    static var sharedInstance: CTNetworkingService {
+        get {
+            return _sharedInstance
+        }
+        set {
+            // do nothing
+        }
+    }
+
     var apiEnvironment: CTNetworkingAPIEnvironment {
         get {
             return _apiEnvironment

@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     lazy var environmentSegment : UISegmentedControl = {
         let _segment = UISegmentedControl(items: ["Develop", "preRelease", "Release"])
         _segment.selectedSegmentIndex = __ServiceName__.sharedInstance.apiEnvironment.rawValue
-        _segment.addTarget(self, action: #selector(didChangedEnvironmentSegment(_:)), for: .touchUpInside)
+        _segment.addTarget(self, action: #selector(didChangedEnvironmentSegment(_:)), for: .valueChanged)
         return _segment
     }()
     
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         return _tableView
     }()
     
-    lazy var dataSource = [
+    lazy var dataSource : [[String:Any]] = [
         // [
             // DataSourceKey.title:"CharacterAPI",
             // DataSourceKey.clazz:CharactorViewController.self
