@@ -10,7 +10,7 @@ MethodName=""
 confirmed="n"
 year=`date +%Y`
 
-ServiceName=""
+ServiceName="____ServiceName____"
 ServiceNameList=("____ServiceName____")
 
 # cachePolicy=""
@@ -110,9 +110,15 @@ do
     read -p "confirm? (y/n):" confirmed
 done
 
-APIManagerFilePath="${GroupPath}/${Group}/${FileName}.swift"
+Directory="${GroupPath}/${Group}"
+APIManagerFilePath="${Directory}/${FileName}.swift"
+ShouldAddGroup=false
 
-mkdir -p "${GroupPath}/${Group}"
+if [! -d "$Directory"]; then
+  ShouldAddGroup=true
+fi
+
+mkdir -p "$Directory"
 cp ./templates/APIManager.swift "$APIManagerFilePath"
 
 sed -i "" "s:__APIManagerFileName__:${FileName}:g"  "$APIManagerFilePath"
