@@ -10,5 +10,8 @@ target 'APITemplateProject' do
 
 pod "CTNetworkingSwift"
 pod "Alamofire"
+
+#private pod
+pod "SwiftHandyFrame"
  
 end
