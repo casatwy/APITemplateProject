@@ -112,11 +112,6 @@ done
 
 Directory="${GroupPath}/${Group}"
 APIManagerFilePath="${Directory}/${FileName}.swift"
-ShouldAddGroup=false
-
-if [! -d "$Directory"]; then
-  ShouldAddGroup=true
-fi
 
 mkdir -p "$Directory"
 cp ./templates/APIManager.swift "$APIManagerFilePath"
