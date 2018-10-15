@@ -44,6 +44,7 @@ extension __ServiceName__ : CTNetworkingService {
     
     func request(params: ParamsType?, methodName: String, requestType: HTTPMethod) -> DataRequest {
         // need return DataRequest
+        return sessionManager.request("https://casatwy.com")
     }
     
     func handleCommonError(_ apiManager: CTNetworkingBaseAPIManager) -> Bool {
