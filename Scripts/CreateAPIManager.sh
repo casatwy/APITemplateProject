@@ -3,7 +3,7 @@
 Cyan='\033[0;36m'
 Default='\033[0;m'
 
-GroupPath="../____ProjectName____/____ProjectName____/APIManagers/Groups"
+GroupPath="../____ProjectName____/____ProjectName____/Groups"
 Group=""
 FileName=""
 MethodName=""
