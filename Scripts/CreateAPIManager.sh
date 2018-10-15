@@ -121,6 +121,9 @@ fi
 mkdir -p "$Directory"
 cp ./templates/APIManager.swift "$APIManagerFilePath"
 
+if [ $ShouldAddGroup ]; then
+fi
+
 sed -i "" "s:__APIManagerFileName__:${FileName}:g"  "$APIManagerFilePath"
 sed -i "" "s:__year__:${year}:g"                    "$APIManagerFilePath"
 sed -i "" "s:__ServiceName__:${ServiceName}:g"      "$APIManagerFilePath"
