@@ -43,6 +43,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A5F0E1F2174F88A00095B77 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
 		4A785AF82171FC9A002C16BD = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +83,7 @@
 		4A785B162171FCBA002C16BD /* APITemplateProject */ = {
 			isa = PBXGroup;
 			children = (
+				4A5F0E1F2174F88A00095B77 /* Groups */,
 				4A90472D21730C02009734E2 /* Service */,
 			);
 			path = APITemplateProject;
