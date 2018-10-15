@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import CTNetworkingSwift
-import CryptoSwift
 
 class __ServiceName__ {
     static let sharedInstance = __ServiceName__()
