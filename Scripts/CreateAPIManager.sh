@@ -123,4 +123,4 @@ sed -i "" "s:__MethodName__:${MethodName}:g"        "$APIManagerFilePath"
 sed -i "" "s:__RequestType__:${requestType}:g"      "$APIManagerFilePath"
 # sed -i "" "s:__CachePolicy__:${cachePolicy}:g"      "$implementFilePath"
 
-pbxproj folder ../____ProjectName____.xcodeproj ../____ProjectName____/____ProjectName____ -e ".DS_Store|Base.lproj" -r
+pbxproj folder ../____ProjectName____.xcodeproj ../____ProjectName____ -e "\.DS_Store|Base\.lproj" -r
