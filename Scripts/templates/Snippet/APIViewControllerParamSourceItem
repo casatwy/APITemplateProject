@@ -1,4 +1,0 @@
-        if let _apiManager = apiManager as? __APIManagerFileName__ {
-             return _apiManager.generateParams()
-        }
-        //__DemoAPIManagerParamSource__

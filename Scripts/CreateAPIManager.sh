@@ -128,14 +128,14 @@ DemoPath="../____ProjectName____/Demo"
 ViewControllerPath="${DemoPath}/ViewController/ViewController.swift"
 APIControllerPath="${DemoPath}/APIControllers/${Group}APIViewController.swift"
 
-OriginViewControllerDataSourceItemPath="./templates/Snippet/ViewControllerDataSourceItem"
-PreparedViewControllerDataSourceItemPath="./templates/Snippet/ViewControllerDataSourceItem.prepared"
+OriginViewControllerDataSourceItemPath="./templates/Snippet/ViewControllerDataSourceItem.sed"
+PreparedViewControllerDataSourceItemPath="./templates/Snippet/ViewControllerDataSourceItem.prepared.sed"
 
-OriginAPIViewControllerDataSourceItemPath="./templates/Snippet/APIViewControllerDataSourceItem"
-PreparedAPIViewControllerDataSourceItemPath="./templates/Snippet/APIViewControllerDataSourceItem.prepared"
+OriginAPIViewControllerDataSourceItemPath="./templates/Snippet/APIViewControllerDataSourceItem.sed"
+PreparedAPIViewControllerDataSourceItemPath="./templates/Snippet/APIViewControllerDataSourceItem.prepared.sed"
 
-OriginAPIViewControllerParamSourceItemPath="./templates/Snippet/APIViewControllerParamSourceItem"
-PreparedAPIViewControllerParamSourceItemPath="./templates/Snippet/APIViewControllerParamSourceItem.prepared"
+OriginAPIViewControllerParamSourceItemPath="./templates/Snippet/APIViewControllerParamSourceItem.sed"
+PreparedAPIViewControllerParamSourceItemPath="./templates/Snippet/APIViewControllerParamSourceItem.prepared.sed"
 
 if [ ! -f "$APIControllerPath" ]; then
   mkdir -p "${DemoPath}/APIControllers"
@@ -148,10 +148,10 @@ if [ ! -f "$APIControllerPath" ]; then
   cp $OriginViewControllerDataSourceItemPath $PreparedViewControllerDataSourceItemPath
   sed -i "" "s:__APIViewControllerName__:${Group}APIViewController:g"  "$PreparedViewControllerDataSourceItemPath"
   sed -i "" "s:__GroupName__:${Group}:g"  "$PreparedViewControllerDataSourceItemPath"
-  # Content=`cat ${PreparedViewControllerDataSourceItemPath}`
-  Content=$(<${PreparedViewControllerDataSourceItemPath})
-  sed -i "" "s%//__DemoAPIViewControllerDataSourceItem__%${Content}%g"  "$ViewControllerPath"
+  chmod 777 $PreparedViewControllerDataSourceItemPath
+  . $PreparedViewControllerDataSourceItemPath $ViewControllerPath
   rm $PreparedViewControllerDataSourceItemPath
+  rm "${ViewControllerPath}.bak"
 else
   # prepare APIViewControllerDataSourceItem
   cp $OriginAPIViewControllerDataSourceItemPath $PreparedAPIViewControllerDataSourceItemPath
