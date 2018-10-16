@@ -128,14 +128,14 @@ DemoPath="../____ProjectName____/Demo"
 ViewControllerPath="${DemoPath}/ViewController/ViewController.swift"
 APIControllerPath="${DemoPath}/APIControllers/${Group}APIViewController.swift"
 
-OriginViewControllerDataSourceItemPath="${DemoPath}/Snippet/ViewControllerDataSourceItem"
-PreparedViewControllerDataSourceItemPath="${DemoPath}/Snippet/ViewControllerDataSourceItem.prepared"
+OriginViewControllerDataSourceItemPath="./templates/Snippet/ViewControllerDataSourceItem"
+PreparedViewControllerDataSourceItemPath="./templates/Snippet/ViewControllerDataSourceItem.prepared"
 
-OriginAPIViewControllerDataSourceItemPath="${DemoPath}/Snippet/APIViewControllerDataSourceItem"
-PreparedAPIViewControllerDataSourceItemPath="${DemoPath}/Snippet/APIViewControllerDataSourceItem.prepared"
+OriginAPIViewControllerDataSourceItemPath="./templates/Snippet/APIViewControllerDataSourceItem"
+PreparedAPIViewControllerDataSourceItemPath="./templates/Snippet/APIViewControllerDataSourceItem.prepared"
 
-OriginAPIViewControllerParamSourceItemPath="${DemoPath}/Snippet/APIViewControllerParamSourceItem"
-PreparedAPIViewControllerParamSourceItemPath="${DemoPath}/Snippet/APIViewControllerParamSourceItem.prepared"
+OriginAPIViewControllerParamSourceItemPath="./templates/Snippet/APIViewControllerParamSourceItem"
+PreparedAPIViewControllerParamSourceItemPath="./templates/Snippet/APIViewControllerParamSourceItem.prepared"
 
 if [ ! -f "$APIControllerPath" ]; then
   mkdir -p "${DemoPath}/APIControllers"
