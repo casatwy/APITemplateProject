@@ -139,7 +139,7 @@ PreparedAPIViewControllerParamSourceItemPath="./templates/Snippet/APIViewControl
 
 if [ ! -f "$APIControllerPath" ]; then
   mkdir -p "${DemoPath}/APIControllers"
-  cp ./templates/Demo/APIController/APIViewController.swift "${APIControllerPath}"
+  cp ./templates/APIViewController.swift "${APIControllerPath}"
   sed -i "" "s:__APIManagerFileName__:${FileName}:g"  "$APIControllerPath"
   sed -i "" "s:__GroupName__:${Group}:g"  "$APIControllerPath"
   sed -i "" "s:__Title__:${Title}:g"  "$APIControllerPath"
