@@ -26,12 +26,7 @@ class ViewController: UIViewController {
     }()
     
     lazy var dataSource : [[String:Any]] = [
-        // [
-            // DataSourceKey.title:"CharacterAPI",
-            // DataSourceKey.clazz:CharactorViewController.self
-        // ],
-
-        //__DemoAPIViewController__
+        //__DemoAPIViewControllerDataSourceItem__
     ]
 
     struct DataSourceKey {

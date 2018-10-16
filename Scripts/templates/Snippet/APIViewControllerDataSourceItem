@@ -1,0 +1,5 @@
+        [
+            DemoSuiteBaseAPIViewController.DataSourceKey.APIManagerTitle:"__Title__",
+            DemoSuiteBaseAPIViewController.DataSourceKey.APIManagerClass:__APIManagerFileName__.self
+        ],
+        //__DemoAPIManagerDataSourceItem__

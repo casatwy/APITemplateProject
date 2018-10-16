@@ -124,7 +124,18 @@ done
 Directory="${GroupPath}/${Group}"
 APIManagerFilePath="${Directory}/${FileName}.swift"
 DemoPath="../____ProjectName____/Demo"
+
+ViewControllerPath="${DemoPath}/ViewController/ViewController.swift"
 APIControllerPath="${DemoPath}/APIControllers/${Group}APIViewController.swift"
+
+OriginViewControllerDataSourceItemPath="${DemoPath}/Snippet/ViewControllerDataSourceItem"
+PreparedViewControllerDataSourceItemPath="${DemoPath}/Snippet/ViewControllerDataSourceItem.prepared"
+
+OriginAPIViewControllerDataSourceItemPath="${DemoPath}/Snippet/APIViewControllerDataSourceItem"
+PreparedAPIViewControllerDataSourceItemPath="${DemoPath}/Snippet/APIViewControllerDataSourceItem.prepared"
+
+OriginAPIViewControllerParamSourceItemPath="${DemoPath}/Snippet/APIViewControllerParamSourceItem"
+PreparedAPIViewControllerParamSourceItemPath="${DemoPath}/Snippet/APIViewControllerParamSourceItem.prepared"
 
 if [ ! -f "$APIControllerPath" ]; then
   mkdir -p "${DemoPath}/APIControllers"
@@ -132,6 +143,23 @@ if [ ! -f "$APIControllerPath" ]; then
   sed -i "" "s:__APIManagerFileName__:${FileName}:g"  "$APIControllerPath"
   sed -i "" "s:__GroupName__:${Group}:g"  "$APIControllerPath"
   sed -i "" "s:__Title__:${Title}:g"  "$APIControllerPath"
+
+  # prepare ViewControllerDataSourceItem
+  cp $OriginViewControllerDataSourceItemPath $PreparedViewControllerDataSourceItemPath
+  sed -i "" "s:__APIViewControllerName__:${Group}APIViewController:g"  "$PreparedViewControllerDataSourceItemPath"
+  sed -i "" "s:__GroupName__:${Group}:g"  "$PreparedViewControllerDataSourceItemPath"
+  Content=`cat ${PreparedViewControllerDataSourceItemPath}`
+  sed -i "" "s://__DemoAPIViewControllerDataSourceItem__:${Content}:g"  "$ViewControllerPath"
+  rm $PreparedViewControllerDataSourceItemPath
+else
+  # prepare APIViewControllerDataSourceItem
+  cp $OriginAPIViewControllerDataSourceItemPath $PreparedAPIViewControllerDataSourceItemPath
+  sed -i "" "s:__Title__:${Title}:g" "$PreparedAPIViewControllerDataSourceItemPath"
+  sed -i "" "s:__APIManagerFileName__:${FileName}:g" "$PreparedAPIViewControllerDataSourceItemPath"
+
+  # prepare APIViewControllerParamSourceItem
+  cp $OriginAPIViewControllerParamSourceItemPath $PreparedAPIViewControllerParamSourceItemPath
+  sed -i "" "s:__APIManagerFileName__:${FileName}:g" "$PreparedAPIViewControllerParamSourceItemPath"
 fi
 
 mkdir -p "$Directory"

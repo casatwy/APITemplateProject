@@ -20,6 +20,7 @@ class __GroupName__APIViewController: DemoSuiteBaseAPIViewController, DemoSuiteB
         if let _apiManager = apiManager as? __APIManagerFileName__ {
              return _apiManager.generateParams()
         }
+        //__DemoAPIManagerParamSource__
         return nil
     }
     
@@ -27,8 +28,8 @@ class __GroupName__APIViewController: DemoSuiteBaseAPIViewController, DemoSuiteB
         [
             DemoSuiteBaseAPIViewController.DataSourceKey.APIManagerTitle:"__Title__",
             DemoSuiteBaseAPIViewController.DataSourceKey.APIManagerClass:__APIManagerFileName__.self
-        ]
-        //__DemoAPIManager__
+        ],
+        //__DemoAPIManagerDataSourceItem__
     ]
     
 }
