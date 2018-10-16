@@ -148,7 +148,8 @@ if [ ! -f "$APIControllerPath" ]; then
   cp $OriginViewControllerDataSourceItemPath $PreparedViewControllerDataSourceItemPath
   sed -i "" "s:__APIViewControllerName__:${Group}APIViewController:g"  "$PreparedViewControllerDataSourceItemPath"
   sed -i "" "s:__GroupName__:${Group}:g"  "$PreparedViewControllerDataSourceItemPath"
-  Content=`cat ${PreparedViewControllerDataSourceItemPath}`
+  # Content=`cat ${PreparedViewControllerDataSourceItemPath}`
+  Content=$(<%{PreparedViewControllerDataSourceItemPath})
   sed -i "" "s%//__DemoAPIViewControllerDataSourceItem__%${Content}%g"  "$ViewControllerPath"
   rm $PreparedViewControllerDataSourceItemPath
 else
