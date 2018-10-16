@@ -7,6 +7,7 @@ GroupPath="../____ProjectName____/____ProjectName____/Groups"
 Group=""
 FileName=""
 MethodName=""
+Title=""
 confirmed="n"
 year=`date +%Y`
 
@@ -27,6 +28,14 @@ getGroup() {
 
     if test -z "$Group"; then
         getGroup
+    fi
+}
+
+getAPITitle() {
+    read -p "Enter API Title: " Title
+
+    if test -z "$Title"; then
+        getAPITitle
     fi
 }
 
@@ -87,16 +96,18 @@ getInfomation() {
     grep -rHn $MethodName ${GroupPath} && echo -e "\n${Cyan}I have found same API manager${Default}" && exit 0
     getGroup
     getAPIName
+    getAPITitle
     getRequestType
     getServiceName
     # getCachePolicy
 
     echo -e "\n${Default}================================================"
-    echo -e "  Group       :  ${Cyan}${Group}${Default}"
-    echo -e "  FileName    :  ${Cyan}${FileName}${Default}"
-    echo -e "  MethodName  :  ${Cyan}${MethodName}${Default}"
-    echo -e "  requestType :  ${Cyan}${requestType}${Default}"
-    echo -e "  Service Name :  ${Cyan}${ServiceName}${Default}"
+    echo -e "  Group        : ${Cyan}${Group}${Default}"
+    echo -e "  FileName     : ${Cyan}${FileName}${Default}"
+    echo -e "  API Title    : ${Cyan}${FileName}${Default}"
+    echo -e "  MethodName   : ${Cyan}${MethodName}${Default}"
+    echo -e "  requestType  : ${Cyan}${requestType}${Default}"
+    echo -e "  Service Name : ${Cyan}${ServiceName}${Default}"
     # echo -e "  cachePolicy :  ${Cyan}${cachePolicy}${Default}"
     echo -e "================================================\n"
 }
@@ -112,6 +123,16 @@ done
 
 Directory="${GroupPath}/${Group}"
 APIManagerFilePath="${Directory}/${FileName}.swift"
+DemoPath="../____ProjectName____/Demo"
+APIControllerPath="${DemoPath}/APIControllers/${Group}APIViewController.swift"
+
+if [! -f "$APIControllerPath"]; then
+  mkdir -p "${DemoPath}/APIControllers"
+  cp ./templates/Demo/APIController/APIViewController.swift "${APIControllerPath}"
+  sed -i "" "s:__APIManagerFileName__:${FileName}:g"  "$APIControllerPath"
+  sed -i "" "s:__GroupName__:${Group}:g"  "$APIControllerPath"
+  sed -i "" "s:__Title__:${Title}:g"  "$APIControllerPath"
+fi
 
 mkdir -p "$Directory"
 cp ./templates/APIManager.swift "$APIManagerFilePath"

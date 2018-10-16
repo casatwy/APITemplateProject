@@ -1,34 +1,34 @@
 //
-//  CharactorViewController.swift
-//  MarvelAPI
+//  __GroupName__APIViewController.swift
+//  ____ProjectName____
 //
-//  Created by casa on 2018/9/27.
-//  Copyright © 2018 casa. All rights reserved.
+//  Created by casa's script
+//  Copyright © ____YEAR____ casa. All rights reserved.
 //
 
 import UIKit
 import APIDemoSuite
 import CTNetworkingSwift
 
-class __GroupName__ViewController: DemoSuiteBaseAPIViewController, DemoSuiteBaseAPIViewControllerChild {
+class __GroupName__APIViewController: DemoSuiteBaseAPIViewController, DemoSuiteBaseAPIViewControllerChild {
     convenience init() {
         self.init(nibName: nil, bundle: nil)
         child = self
     }
     
     func params(for apiManager: CTNetworkingBaseAPIManager) -> ParamsType? {
-        // if let _apiManager = apiManager as? CTMarvelCharactorsAPIManager {
-        //     return _apiManager.generateParams(name: nil, nameStartsWith: "b", modifiedSince: nil, comics: nil, series: nil, events: nil, stories: nil, orderBy: .nameAsc)
-        // }
+        if let _apiManager = apiManager as? __APIManagerFileName__ {
+             return _apiManager.generateParams()
+        }
         return nil
     }
     
-    let dataSource = [
+    let dataSource : [String:Any] = [
         [
-            // DemoSuiteBaseAPIViewController.DataSourceKey.APIManagerTitle:"Marvel Character List",
-            // DemoSuiteBaseAPIViewController.DataSourceKey.APIManagerClass:CTMarvelCharactorsAPIManager.self
-            // __DemoAPIManager__
+            DemoSuiteBaseAPIViewController.DataSourceKey.APIManagerTitle:"__Title__",
+            DemoSuiteBaseAPIViewController.DataSourceKey.APIManagerClass:__APIManagerFileName__.self
         ]
+        //__DemoAPIManager__
     ]
     
 }
