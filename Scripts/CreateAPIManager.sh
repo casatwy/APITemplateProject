@@ -126,7 +126,7 @@ APIManagerFilePath="${Directory}/${FileName}.swift"
 DemoPath="../____ProjectName____/Demo"
 APIControllerPath="${DemoPath}/APIControllers/${Group}APIViewController.swift"
 
-if [! -f "$APIControllerPath"]; then
+if [ ! -f "$APIControllerPath" ]; then
   mkdir -p "${DemoPath}/APIControllers"
   cp ./templates/Demo/APIController/APIViewController.swift "${APIControllerPath}"
   sed -i "" "s:__APIManagerFileName__:${FileName}:g"  "$APIControllerPath"
