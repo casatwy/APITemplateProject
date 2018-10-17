@@ -1,15 +1,15 @@
 //
-//  __APIManagerName__.swift
-//  MarvelAPI
+//  __APIManagerFileName__.swift
+//  ____ProjectName____
 //
-//  Created by casa on 2018/9/27.
-//  Copyright © 2018 casa. All rights reserved.
+//  Created by casa's script
+//  Copyright © __year__ casa. All rights reserved.
 //
 
 import Alamofire
 import CTNetworkingSwift
 
-public class __APIManagerName__: CTNetworkingBaseAPIManager {
+public class __APIManagerFileName__: CTNetworkingBaseAPIManager {
 
     override init() {
         super.init()
@@ -31,7 +31,7 @@ public class __APIManagerName__: CTNetworkingBaseAPIManager {
     }
 }
 
-extension __APIManagerName__ : CTNetworkingBaseAPIManagerChild {
+extension __APIManagerFileName__ : CTNetworkingBaseAPIManagerChild {
     public var isPagable : Bool {
         return true
     }
@@ -49,7 +49,7 @@ extension __APIManagerName__ : CTNetworkingBaseAPIManagerChild {
     }
 }
 
-extension __APIManagerName__ : CTNetworkingBaseAPIManagerValidator {
+extension __APIManagerFileName__ : CTNetworkingBaseAPIManagerValidator {
     public func isCorrect(manager: CTNetworkingBaseAPIManager, params: ParamsType?) -> CTNetworkingErrorType.Params {
         return .correct
     }
@@ -59,7 +59,7 @@ extension __APIManagerName__ : CTNetworkingBaseAPIManagerValidator {
     }
 }
 
-extension __APIManagerName__ : CTNetworkingAPIManagerPagable {
+extension __APIManagerFileName__ : CTNetworkingAPIManagerPagable {
     public var isFirstPage : Bool {
         return _isFirstPage
     }
@@ -88,37 +88,19 @@ extension __APIManagerName__ : CTNetworkingAPIManagerPagable {
     }
 }
 
-extension __APIManagerName__ {
+extension __APIManagerFileName__ {
     
     public func generateParams(__ParamList__) -> [String:String] {
         var params = [String:String]()
         // params["name"] = name
-        __ParamsToDict__
+        // __ParamsToDict__
         return params
     }
     
     public override func beforePerformSuccess(_ apiManager: CTNetworkingBaseAPIManager) -> Bool {
         
-        if let shouldContinue = interceptor?.beforePerformSuccess(self), shouldContinue == false { return false }
-
-        // if totalCount == nil {
-        //     guard let data = apiManager.response?.data else { return false }
-        //     guard let result = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:AnyObject] else { return false }
-        //     guard let total = result?["data"]?["total"] as? Double else { return false }
-        //     _totalCount = Int(ceil(total/Double(pageSize)))
-        // }
-        // guard let totalCount = totalCount else { return false }
-        // if currentPageNumber == (totalCount - 1) {
-        //     _isLastPage = true
-        // } else {
-        //     _isLastPage = false
-        // }
-        // 
-        // _isFirstPage = (_currentPageNumber == 0)
-
-        // return true
-
-        // Write validation codes
+        guard let shouldContinue = interceptor?.beforePerformSuccess(self), shouldContinue == false { return false }
+        // 在这里写翻页逻辑
 
     }
     

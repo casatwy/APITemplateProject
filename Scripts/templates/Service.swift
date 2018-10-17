@@ -1,15 +1,14 @@
 //
-//  CTMarvelService.swift
-//  MarvelAPI
+//  __ServiceName__.swift
+//  ____ProjectName____
 //
-//  Created by casa on 2018/9/27.
-//  Copyright © 2018 casa. All rights reserved.
+//  Created by casa's script
+//  Copyright © __year__ casa. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 import CTNetworkingSwift
-import CryptoSwift
 
 class __ServiceName__ {
     static let sharedInstance = __ServiceName__()

@@ -1,6 +1,6 @@
 //
 //  __APIManagerFileName__.swift
-//  __ProjectName__
+//  ____ProjectName____
 //
 //  Created by casa's script
 //  Copyright © __year__ casa. All rights reserved.
