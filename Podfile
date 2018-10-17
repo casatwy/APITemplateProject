@@ -10,7 +10,6 @@ target 'APITemplateProject' do
 
 pod "CTNetworkingSwift"
 pod "Alamofire"
-pod "SwiftyJSON"
 
 #private pod
 pod "SwiftHandyFrame"
