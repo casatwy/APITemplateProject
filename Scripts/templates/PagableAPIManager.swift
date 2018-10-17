@@ -45,7 +45,7 @@ extension __APIManagerFileName__ : CTNetworkingBaseAPIManagerChild {
     }
     
     public var requestType : HTTPMethod {
-        return .__HTTPMethod__
+        return .__RequestType__
     }
 }
 
@@ -99,7 +99,7 @@ extension __APIManagerFileName__ {
     
     public override func beforePerformSuccess(_ apiManager: CTNetworkingBaseAPIManager) -> Bool {
         
-        guard let shouldContinue = interceptor?.beforePerformSuccess(self), shouldContinue == false { return false }
+        if let shouldContinue = interceptor?.beforePerformSuccess(self), shouldContinue == false { return false }
         // 在这里写翻页逻辑
 
     }
