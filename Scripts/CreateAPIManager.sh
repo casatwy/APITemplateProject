@@ -157,10 +157,18 @@ else
   cp $OriginAPIViewControllerDataSourceItemPath $PreparedAPIViewControllerDataSourceItemPath
   sed -i "" "s:__Title__:${Title}:g" "$PreparedAPIViewControllerDataSourceItemPath"
   sed -i "" "s:__APIManagerFileName__:${FileName}:g" "$PreparedAPIViewControllerDataSourceItemPath"
+  chmod 777 $PreparedAPIViewControllerDataSourceItemPath $APIControllerPath
+  $PreparedAPIViewControllerDataSourceItemPath $APIControllerPath
+  rm $PreparedAPIViewControllerDataSourceItemPath
+  rm "${APIControllerPath}.bak"
 
   # prepare APIViewControllerParamSourceItem
   cp $OriginAPIViewControllerParamSourceItemPath $PreparedAPIViewControllerParamSourceItemPath
   sed -i "" "s:__APIManagerFileName__:${FileName}:g" "$PreparedAPIViewControllerParamSourceItemPath"
+  chmod 777 $PreparedAPIViewControllerParamSourceItemPath $APIControllerPath
+  $PreparedAPIViewControllerParamSourceItemPath $APIControllerPath
+  rm $PreparedAPIViewControllerParamSourceItemPath
+  rm "${APIControllerPath}.bak"
 fi
 
 mkdir -p "$Directory"
