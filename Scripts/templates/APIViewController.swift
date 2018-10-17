@@ -24,7 +24,7 @@ class __GroupName__APIViewController: DemoSuiteBaseAPIViewController, DemoSuiteB
         return nil
     }
     
-    let dataSource : [String:Any] = [
+    let dataSource : [[String:Any]] = [
         [
             DemoSuiteBaseAPIViewController.DataSourceKey.APIManagerTitle:"__Title__",
             DemoSuiteBaseAPIViewController.DataSourceKey.APIManagerClass:__APIManagerFileName__.self
