@@ -102,10 +102,10 @@ getInfomation() {
     # getCachePolicy
 
     echo -e "\n${Default}================================================"
-    echo -e "  Group        : ${Cyan}${Group}${Default}"
-    echo -e "  FileName     : ${Cyan}${FileName}${Default}"
-    echo -e "  API Title    : ${Cyan}${FileName}${Default}"
     echo -e "  MethodName   : ${Cyan}${MethodName}${Default}"
+    echo -e "  Group        : ${Cyan}${Group}${Default}"
+    echo -e "  API File Name: ${Cyan}${FileName}${Default}"
+    echo -e "  API Title    : ${Cyan}${Title}${Default}"
     echo -e "  requestType  : ${Cyan}${requestType}${Default}"
     echo -e "  Service Name : ${Cyan}${ServiceName}${Default}"
     # echo -e "  cachePolicy :  ${Cyan}${cachePolicy}${Default}"
