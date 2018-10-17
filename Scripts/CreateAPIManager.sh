@@ -149,7 +149,7 @@ if [ ! -f "$APIControllerPath" ]; then
   sed -i "" "s:__APIViewControllerName__:${Group}APIViewController:g"  "$PreparedViewControllerDataSourceItemPath"
   sed -i "" "s:__GroupName__:${Group}:g"  "$PreparedViewControllerDataSourceItemPath"
   chmod 777 $PreparedViewControllerDataSourceItemPath
-  . $PreparedViewControllerDataSourceItemPath $ViewControllerPath
+  $PreparedViewControllerDataSourceItemPath $ViewControllerPath
   rm $PreparedViewControllerDataSourceItemPath
   rm "${ViewControllerPath}.bak"
 else
